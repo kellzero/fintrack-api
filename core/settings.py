@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-5jsfm)8^q$fl3gj#@v&l_+i7+)5a5gxmg-=n9#lu_1quj^-hp0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['fintrack-api-hdfk.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -122,4 +122,5 @@ STATIC_URL = 'static/'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    'https://fintrack-five-woad.vercel.app',
 ]
