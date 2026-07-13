@@ -9,8 +9,13 @@ from .serializers import TransactionSerializer
 # Create your views here.
 
 class TransactionViewSet(viewsets.ModelViewSet):
-  queryset = Transaction.objects.all()
   serializer_class = TransactionSerializer
+
+  def get_queryset(self):
+    return Transaction.objects.filter(user=self.request.user)
+  
+  def perform_create(self, serializer):
+    serializer.save(user=self.request.user)
 
 @api_view(['POST'])
 @permission_classes([AllowAny])
